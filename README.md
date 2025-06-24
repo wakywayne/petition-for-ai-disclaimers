@@ -1,1 +1,152 @@
-# README
+<body>
+  <header>
+    <h1>Stop Undisclosed AI in Media</h1>
+    <em>Please view the actual site to fill out the embedded google form petition</em>
+    <a href="https://disclaimerforaivideo.com">https://disclaimerforaivideo.com</a>
+    <p>
+      A petition for mandatory disclaimers on AI-generated video and voice
+      content
+    </p>
+  </header>
+
+  <main>
+    <section class="petition-content">
+      <h2>Our Mission</h2>
+      <p>
+        As artificial intelligence technology advances, we're seeing more
+        media content that uses AI-generated video and voice. While this
+        technology offers incredible possibilities, it also raises serious
+        concerns about authenticity and trust in media.
+      </p>
+
+      <p>
+        We believe that
+        <strong>all media that uses AI-generated video or voice should be required
+          to display a clear disclaimer directly on the content itself</strong>, not just in fine print or descriptions
+        that can be easily missed.
+        Simply having a chip or pop-up on a sidebar is not enough, if anything
+        people have been trained to ignore these kinds of things as we are
+        constantly bombarded with ads and pop-ups when surfing online. When
+        people are consuming AI generatied content it needs to be stated
+        clearly, so that it is almost impossible to miss.
+      </p>
+
+      <h2>Why This Matters</h2>
+      <ul>
+        <li>
+          <strong>Transparency:</strong> People have the right to know when
+          they're viewing or listening to AI-generated content
+        </li>
+        <li>
+          <strong>Trust:</strong> Clear labeling helps maintain trust in media
+          and prevents deception.
+        </li>
+        <li>
+          <strong>Education:</strong> Proper disclaimers help the public
+          understand the increasing presence of AI in everyday media
+        </li>
+        <li>
+          <strong>Protection:</strong> Vulnerable populations need safeguards
+          against misleading content
+        </li>
+      </ul>
+
+      <h2>What We're Asking For</h2>
+      <p>We're calling for legislation that requires:</p>
+      <ol>
+        <li>
+          A clear visual disclaimer
+          <span class="highlight">printed directly on any video</span> that
+          contains AI-generated content
+        </li>
+        <li>
+          If an ad is only audio and using AI audio generation. An audible
+          disclaimer at the beginning of any audio content that uses
+          AI-generated voices should be included
+        </li>
+        <li>
+          These disclaimers to be present regardless of platform or medium
+        </li>
+        <li>
+          Penalties for content creators and distributors who fail to properly
+          label AI content. As long as a black list for those who have tried
+          to pass AI generated video or audio as authentic.
+        </li>
+      </ol>
+
+      <h2>Fighting Misinformation and Deep Fakes</h2>
+      <p>
+        Implementing mandatory AI disclaimers creates a powerful tool to
+        <strong>combat misleading content and harmful deep fakes</strong>.
+        Here's how:
+      </p>
+      <ul>
+        <li>
+          <strong>Legal Framework:</strong> With clear labeling requirements
+          in place, content that deliberately misrepresents AI-generated media
+          as authentic can be
+          <span class="highlight">easily identified and banned</span>
+        </li>
+        <li>
+          <strong>Enforcement Mechanism:</strong> Authorities can take swift
+          action against unlabeled AI content designed to mislead the public
+        </li>
+        <li>
+          <strong>Deterrent Effect:</strong> Mandatory penalties will
+          discourage bad actors from creating and distributing deceptive deep
+          fakes
+        </li>
+        <li>
+          <strong>Public Awareness:</strong> As people become accustomed to
+          seeing AI disclaimers, they'll be more likely to question content
+          that lacks proper labeling
+        </li>
+      </ul>
+      <p>
+        This simple regulatory measure provides a practical solution to the
+        growing threat of AI-generated misinformation without restricting
+        legitimate creative and educational uses of the technology.
+      </p>
+
+      <p>
+        Even if you feel you are able to easily detect AI media, that won't
+        always be the case. The AI generated video and audio content is the
+        worse that we will ever see; AI content is only going to get better
+        with time. We also need to think about the groups of people that are
+        less aware of AI and how easy it is for them to fall into the trap of
+        believing all the content they see is real.
+        </br>
+        <strong>By signing this petition, you're supporting transparency and
+          honesty in media during this critical time of technological change.
+        </strong>
+      </p>
+    </section>
+
+    <section class="form-container">
+      <h2>Sign the Petition</h2>
+      <p>Please fill out the form below to add your name to our petition:</p>
+
+      <!-- Google Form Embed -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSf6m8S8P37PdcMDJNP7uBsP10b4_XwxFfOzxdR5bUElF-8Czw/viewform?embedded=true"
+        width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+        Loading…
+      </iframe>
+      <p style="text-align: center; color: #777; font-style: italic">
+        We will never sell your data! The purpose of this petition is to promote regulation.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>2025 Stop Undisclosed AI in Media Campaign</p>
+    <!-- <p> -->
+    <!--   Contact: <a href="mailto:contact@example.com">contact@example.com</a> -->
+    <!-- </p> -->
+    <p>
+      This petition is part of a grassroots effort to promote transparency in
+      AI-generated media.
+    </p>
+  </footer>
+</body>
