@@ -4,7 +4,7 @@
     <em>Please view the actual site to fill out the embedded google form petition</em>
     <a href="https://disclaimerforaivideo.com">https://disclaimerforaivideo.com</a>
     <p>
-      A petition for mandatory disclaimers on AI-generated video and voice
+      This is a petition for mandatory disclaimers on AI-generated video and voice
       content
     </p>
   </header>
