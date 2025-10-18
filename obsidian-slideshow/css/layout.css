@@ -5,6 +5,16 @@
 }
 
 /* My custom*/
+.reveal .slides section img {
+  display: block;
+  margin: 0 auto;
+  max-width: 95%;
+  max-height: 80vh; /* scale by viewport height */
+  height: auto;
+  width: auto;
+  object-fit: contain; /* safe fallback; works with the constraints above */
+}
+
 /* Optional: a tighter variant if some images still feel big */
 .reveal .slides section img.fit-small {
   max-width: 70%;
