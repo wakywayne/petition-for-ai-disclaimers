@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.7" data-background-size="contain" data-background-image="Drawings/Slides/PRC Sip and Slides/attachments/Pasted image 20251014195456.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .element: style="color: yellow" -->
+
+# What is Obsidian
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Whatever you want it to be
+</div>
+
+<aside class="notes"><h1 id="improve-productivity--everything-is-fully-customizable-hotkeys--backend-too--plugins">improve productivity ~ Everything is fully customizable hotkeys ~ Backend too ~ Plugins</h1>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.7" data-background-size="contain" data-background-image="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-16 123200.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+This presentation is made in Obsidian!
+</div>
+
+<aside class="notes"><h1 id="obsidian-can-be-anything">Obsidian can be anything</h1>
+</aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+We’ll cover...
+</div>
+
+<aside class="notes"><h1 id="overview-of-slides">Overview of slides</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+1. Markdown essentials
+1. &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Meta Data (Bases, Dataview(_at the end_)  )
+1. &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Example Use Cases (Tasks, Book, Movie)
+1. &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Power of Automation (Quick Add, Templater, Command Palette, and Hotkeys)
+</div>
+
+<aside class="notes"><h1 id="obsidian-saves-you-time-by-making-things-easy-and-care-free">Obsidian saves you time by making things easy and care free</h1>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Markdown Examples
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 134138.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="properties--callout--header"><strong>Properties</strong> ~ <strong>Callout</strong> ~ <strong>Header</strong></h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 133703.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="format-as-u-type">Format as U type</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 133720.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="plugin--makes-table-of-contents">Plugin ~ Makes table of contents</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 133813.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="custom-theme">Custom theme</h1>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Meta Data
+
+
+> You can't keep track of everything just by _"remembering"_, you need to save it in time when it's on your mind and then have a way of finding it when you are trying to remember or use the information.
+</div>
+
+<aside class="notes"><h2 id="ignore-slide--i-didnt-use-obsidian-much-for-a-year"><strong>Ignore slide</strong> ~ I didn&#39;t use obsidian much for a year</h2>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+What is frontmatter and YAML?
+
+```yaml
+name: Chad "The Calf Destroyer" Thompson
+favorite_snack_gel_packs:
+  - Espresso Love
+  - Salted Caramel
+  - "That one mystery flavor I regret every time"
+weekly_strava_hours: 3
+average_pace: "8:42 min/mi (depending on selfie stops)"
+shoes: "Hoka Clifton 9 (with 437 miles but still going)"
+watch: "Garmin that won’t stop congratulating me"
+motivation_quotes:
+  - "It’s not a jog, it’s a lifestyle."
+  - "Pain is just the body buffering."
+  - "One more run before the next rest day... which is also a run."
+
+```
+</div>
+
+<aside class="notes"><h1 id="quick-slide--keysfields-white--value-pink"><strong>Quick Slide</strong> ~ Keys/fields: white ~ value: pink</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### That looks annoying...
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+So you don't have to do it!!! 
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-13 235202.png" alt="" style="width: 600px; object-fit: fill">
+</div>
+
+<aside class="notes"><h1 id="set-up-ok-so-we-dont-have-to-type-out-that-annoying-yaml-now-you-might-say"><strong>set up:</strong> &quot;Ok so we don&#39;t have to type out that annoying YAML Now, you might say&quot;</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## I don't have a need to track data!
+</div>
+
+<aside class="notes"><h1 id="if-thats-the-case">If that&#39;s the case</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Wow you are boring...
+</div>
+
+<aside class="notes"><h1 id="i-cant-really-help-you-there">I can&#39;t really help you there</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+But seriously you all have interesting things to write down and keep track of
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 150951.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="properties">properties</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 003609.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="with-the-obsidian-bases-feature-you-can-create-views-with-your-notes">With the obsidian bases feature you can create views with your notes</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 150916.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="sort">SORT</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 150936 1.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="filter">FILTER</h1>
+</aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Useful Plugins
+</div>
+
+<aside class="notes"><h1 id="i-was-hyping-up-the-plugin-ecosystem-so-here-you-go">I was hyping up the plugin ecosystem so here you go</h1>
+</aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## QuickAdd
+
+- Create macros to instantly capture ideas, tasks, or meetings
+
+- Can append to daily notes, create files from templates, prompt for inputs
+</div>
+
+<aside class="notes"><h1 id="chain-actions--create-notes-w-template"><strong>chain actions!</strong> ~ Create Notes w/ template</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Create Files from templates
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 190244.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-16 122901.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h1 id="create-command-that-use-template">create command that use template</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 221329.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 153939.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h2 id="you-use-it-to-track-your-bills">you use it to track your bills</h2>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Jokes
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 142145.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 142131.png" alt="" style="object-fit: scale-down">
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Tracker
+
+Allows you to track your progress on properties or tasks
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Here is what you can do
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 193913.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><h2 id="using-quick-add-plugin-and-a-template-create-files">Using quick add plugin and a template create files</h2>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```
+searchType: frontmatter
+searchTarget: distance
+folder: runner_notes
+datasetName: "Distance (mi)"
+dateFormat: YYYY-MM-DD
+line:
+    title: Daily Distance
+    yAxisLabel: Miles
+    xAxisTickInterval: week
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 193921.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 193932.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 193939.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+And it works with check boxes
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 210619.png" alt="" style="width: 400px; object-fit: fill">
+</div></script></section></section><section  data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.7" data-background-size="contain" data-background-image="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-16 233035.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Thank You
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Tasks
+Two keystrokes → structured, dated, searchable tasks
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 131416.png" alt="" style="width: 400px; object-fit: fill">
+</div>
+
+<aside class="notes"><h1 id="if-you-use-obsidian-for-everything-it-is-always-open">If you use obsidian for everything it is always open</h1>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 131202.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-opacity="0.2" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 131250.png" alt="" style="object-fit: scale-down">
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Book Search
+
+Allows you to search through a public api to retrieve book information and cover images
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 145504.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 145446.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 145531.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-14 150231.png" alt="" style="object-fit: scale-down">
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.7" data-background-size="contain" data-background-image="Drawings/Slides/PRC Sip and Slides/attachments/Screenshot 2025-10-16 233035.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Thank You
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":false,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
