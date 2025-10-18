@@ -3,6 +3,15 @@
   --split-div-size: 0;
   --split-gap-size: 0;
 }
+
+/* My custom*/
+/* Optional: a tighter variant if some images still feel big */
+.reveal .slides section img.fit-small {
+  max-width: 70%;
+  max-height: 60vh;
+}
+/* end of my custom*/
+
 split {
   display: flex;
   gap: unset;
